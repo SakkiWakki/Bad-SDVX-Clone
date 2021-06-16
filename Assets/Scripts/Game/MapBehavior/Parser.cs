@@ -75,7 +75,7 @@ public class Parser
             }
 
             totalSectionCount = finish - start;
-;
+
             //Nested for loop to go through each measure. Keep in mind that int finish still takes place on the "--"s.
             for (int j = start; j < finish; j++)
             {

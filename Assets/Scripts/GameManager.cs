@@ -32,9 +32,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
 
-        //Change the cursor
-        Cursor.SetCursor(_cursorArrow, Vector2.zero, CursorMode.ForceSoftware);
-
         //INIT
         if (Instance == null)
         {
