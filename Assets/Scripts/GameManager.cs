@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private Texture2D _cursorArrow;
-
     private State _currentState;
     private bool _isSwitchingState;
 

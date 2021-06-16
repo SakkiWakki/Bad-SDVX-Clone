@@ -915,7 +915,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &610696107
 Transform:
   m_ObjectHideFlags: 0
@@ -1381,7 +1381,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f73e20a5f494b744b0bdcd7bc000b0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cursorArrow: {fileID: 0}
   panelMainMenu: {fileID: 0}
   centerScreen: {fileID: 0}
   selectInitAnim: {fileID: 0}
@@ -1400,7 +1399,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2ea0b9e026cff340ba63cd453551925, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cursorArrow: {fileID: 2800000, guid: 58ab739bb27dcb94c8db41b6a144de97, type: 3}
   panelMainMenu: {fileID: 1125947271}
   centerScreen: {fileID: 73286303}
   selectInitAnim: {fileID: 468736663}
@@ -1433,7 +1431,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40df55abf4bbed744a347f9197ab45f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cursorArrow: {fileID: 0}
   panelMainMenu: {fileID: 0}
   centerScreen: {fileID: 0}
   selectInitAnim: {fileID: 0}
@@ -2585,7 +2582,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1739271016
 MonoBehaviour:
   m_ObjectHideFlags: 0

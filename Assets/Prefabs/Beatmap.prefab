@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeSignatureTop: 4
-  measureSize: 50
+  measureSize: 100
   BTNote: {fileID: 6777712889938811945, guid: 511cb26a20732d840816a12f5a717f15, type: 3}

@@ -29,7 +29,7 @@ public class Beatmap : MonoBehaviour
         }
 
         //Create chart, also current test code
-        parser = new Parser("Z:/Unity Projects/Bad SDVX Clone/Assets/Resources/666/adv.ksh");
+        parser = new Parser("Z:/Unity Projects/Bad SDVX Clone/Assets/Resources/666/mxm.ksh");
         parser.KSHMap();
     }
 

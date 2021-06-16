@@ -18,6 +18,9 @@ public class Note : MonoBehaviour
     //The note's row number
     public int row;
 
+    //
+
+
     void Start()
     {
         
@@ -25,6 +28,11 @@ public class Note : MonoBehaviour
 
     void Update()
     {
+
+        if (Conductor.Instance.songPosition >= songPosition)
+        {
+            Destroy(this.gameObject);
+        }
         switch (row) {
             case 1:
                 break;

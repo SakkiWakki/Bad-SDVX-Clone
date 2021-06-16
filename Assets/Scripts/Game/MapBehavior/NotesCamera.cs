@@ -13,8 +13,8 @@ public class NotesCamera : MonoBehaviour
 
     void Update()
     {
-        float cameraPos = (Conductor.Instance.songPositionInBeats * ((float)Beatmap.Instance.measureSize / Beatmap.Instance.timeSignatureTop));
+        float songPositionInZ = (Conductor.Instance.songPositionInBeats * 24.5f);
         if (Conductor.Instance.musicSource.isPlaying)
-            transform.position = new Vector3(19.62f, 10.97101f, cameraPos - offset);
+            transform.position = new Vector3(19.62f, 10.97101f, songPositionInZ-offset);
     }
 }
