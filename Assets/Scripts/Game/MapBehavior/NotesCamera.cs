@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class NotesCamera : MonoBehaviour
 {
+
+    public float offset;
     void Start()
     {
     }
@@ -11,8 +13,8 @@ public class NotesCamera : MonoBehaviour
 
     void Update()
     {
+        float cameraPos = (Conductor.Instance.songPositionInBeats * ((float)Beatmap.Instance.measureSize / Beatmap.Instance.timeSignatureTop));
         if (Conductor.Instance.musicSource.isPlaying)
-            transform.position = new Vector3(19.62f, 10.97101f, 
-                (Conductor.Instance.songPositionInBeats * ((float)Beatmap.Instance.measureSize/ Beatmap.Instance.timeSignatureTop)-22.4f));
+            transform.position = new Vector3(19.62f, 10.97101f, cameraPos - offset);
     }
 }

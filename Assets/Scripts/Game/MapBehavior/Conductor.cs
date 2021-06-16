@@ -18,7 +18,7 @@ public class Conductor : MonoBehaviour
     public float songPositionInBeats;
 
     //How many seconds have passed since the song started
-    public float dspSongTime;
+    public double trackStartTime;
     public AudioSource musicSource;
 
     public GameObject beatmap;
@@ -40,13 +40,14 @@ public class Conductor : MonoBehaviour
         secPerBeat = 60f / songBpm;
         beatPerSec = songBpm / 60f;
 
-        Invoke("StartSong", 3f);
+        Invoke("StartSong", 2f);
     }
 
     void StartSong()
     {
         //Record the time when the music starts
-        dspSongTime = (float)AudioSettings.dspTime;
+        trackStartTime = AudioSettings.dspTime+1;
+        musicSource.PlayScheduled(trackStartTime);
 
         //Start the music
         musicSource.Play();
@@ -59,7 +60,7 @@ public class Conductor : MonoBehaviour
     {
         if (musicSource.isPlaying)
         {
-            songPosition = (float)(AudioSettings.dspTime - dspSongTime);
+            songPosition = (float)(AudioSettings.dspTime - trackStartTime);
             songPositionInBeats = songPosition / secPerBeat;
         }
     }

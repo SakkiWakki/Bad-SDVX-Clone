@@ -57,7 +57,7 @@ public class Parser
         //Main part of parser
         for (int i = 0; i < locationOfMeasures.Count - 1; i = i+1)
         {
-            onSectionNum = 0;
+            onSectionNum = -1;
 
             //Indicates where, on the file, a measure begins and ends
             start = locationOfMeasures[i];
@@ -86,7 +86,7 @@ public class Parser
                     switch (lines[j][k])
                     {
                         case '1':
-                            instance.CreateNote(GetLaneButton(k), (instance.measureSize * measureCount) + instance.measureSize * ((float)onSectionNum / totalSectionCount));
+                            instance.CreateNote(GetLaneButton(k), measureCount, onSectionNum, totalSectionCount);
                             break;
                         default:
                             break;
@@ -104,16 +104,12 @@ public class Parser
         switch (k)
         {
             case 0:
-                Debug.Log(1);
                 return "BT1";
             case 1:
-                Debug.Log(2);
                 return "BT2";
             case 2:
-                Debug.Log(3);
                 return "BT3";
             case 3:
-                Debug.Log(4);
                 return "BT4";
             default:
                 break;

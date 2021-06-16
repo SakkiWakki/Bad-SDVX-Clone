@@ -2189,8 +2189,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500000270}
   m_LocalRotation: {x: 0.095845714, y: 0, z: 0, w: 0.99539626}
-  m_LocalPosition: {x: 19.62, y: 10.97101, z: -22.4}
-  m_LocalScale: {x: 1, y: -0.714295, z: 1}
+  m_LocalPosition: {x: 19.62, y: 10.97101, z: -23.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1236616752}
   m_RootOrder: 2
@@ -2250,6 +2250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f892a2c278d87b448e02eae8ea761a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: 36.6
 --- !u!1 &1562834557
 GameObject:
   m_ObjectHideFlags: 0
@@ -3170,6 +3171,10 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.658
       objectReference: {fileID: 0}
+    - target: {fileID: 2619690495280077239, guid: 2ee4f86506ec9df46a1a55c122904550, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 84e38686f9a4b3c478b6d33d3991dba9, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ee4f86506ec9df46a1a55c122904550, type: 3}
 --- !u!1001 &5659576051106081809
