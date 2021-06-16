@@ -43,6 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a701f45cf4313e148879e65588c124bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeSignitureTop: 4
-  measureSize: 150
+  timeSignatureTop: 4
+  measureSize: 50
   BTNote: {fileID: 6777712889938811945, guid: 511cb26a20732d840816a12f5a717f15, type: 3}

@@ -9,6 +9,7 @@ public class Conductor : MonoBehaviour
 
     public float songBpm;
     public float secPerBeat;
+    public float beatPerSec;
 
     //Current song position, in seconds
     public float songPosition;
@@ -22,10 +23,22 @@ public class Conductor : MonoBehaviour
 
     public GameObject beatmap;
 
+    public static Conductor Instance;
+
     void Start()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         musicSource = GetComponent<AudioSource>();
         secPerBeat = 60f / songBpm;
+        beatPerSec = songBpm / 60f;
 
         Invoke("StartSong", 3f);
     }
