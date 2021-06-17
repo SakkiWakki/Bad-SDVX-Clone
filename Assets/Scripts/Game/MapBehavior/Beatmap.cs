@@ -11,9 +11,11 @@ public class Beatmap : MonoBehaviour
 
     //Notes
     public GameObject BTNote;
+    public GameObject FXNote;
 
     //Uses the parser class to help read the KSH file.
     Parser parser;
+
 
     public static Beatmap Instance;
     void Start()
@@ -46,28 +48,33 @@ public class Beatmap : MonoBehaviour
         switch (note)
         {
             case "BT1":
-                positionNotes(17.6f, 0.01f, z, measureCount, onSectionNum, totalSectionCount, 1);
+                positionNotes(BTNote, 17.6f, 0.02f, z, measureCount, onSectionNum, totalSectionCount, 1);
                 break;
             case "BT2":
-                positionNotes(18.94f, 0.01f, z, measureCount, onSectionNum, totalSectionCount, 2);
+                positionNotes(BTNote, 18.94f, 0.02f, z, measureCount, onSectionNum, totalSectionCount, 2);
                 break;
             case "BT3":
-                positionNotes(20.3f, 0.01f, z, measureCount, onSectionNum, totalSectionCount, 3);
+                positionNotes(BTNote, 20.3f, 0.02f, z, measureCount, onSectionNum, totalSectionCount, 3);
                 break;
             case "BT4":
-                positionNotes(21.65f, 0.01f, z, measureCount, onSectionNum, totalSectionCount, 4);
+                positionNotes(BTNote, 21.65f, 0.02f, z, measureCount, onSectionNum, totalSectionCount, 4);
+                break;
+            case "FX1":
+                positionNotes(FXNote, 18.27f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 4);
+                break;
+            case "FX2":
+                positionNotes(FXNote, 20.98f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 4);
                 break;
 
         }
     }
 
     //For use in CreateNote()
-    public void positionNotes(float x, float y, float z, int measureCount, int onSectionNum, int totalSectionCount, int row)
+    public void positionNotes(GameObject noteType, float x, float y, float z, int measureCount, int onSectionNum, int totalSectionCount, int row)
     {
-        Transform pos = BTNote.GetComponent<Transform>();
+        GameObject note = Instantiate(noteType, this.gameObject.transform);
+        Transform pos = note.GetComponent<Transform>();
         pos.position = new Vector3(x, y, z);
-
-        GameObject note = Instantiate(BTNote, pos);
         Note script = note.GetComponent<Note>();
         script.beatPosition = timeSignatureTop * (measureCount + (float)onSectionNum/totalSectionCount) + 1;
         script.songPosition = script.beatPosition * Conductor.Instance.secPerBeat;

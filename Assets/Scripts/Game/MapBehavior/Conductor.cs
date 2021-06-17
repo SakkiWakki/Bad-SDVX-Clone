@@ -53,7 +53,7 @@ public class Conductor : MonoBehaviour
         musicSource.Play();
 
         //Create track
-        Instantiate(beatmap);
+        beatmap.SetActive(true);
     }
 
     void FixedUpdate()

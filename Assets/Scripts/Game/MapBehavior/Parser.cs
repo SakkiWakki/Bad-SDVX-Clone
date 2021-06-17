@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Linq;
+using System;
 
 public class Parser
 {
@@ -80,13 +81,31 @@ public class Parser
             for (int j = start; j < finish; j++)
             {
                 onSectionNum++;
-                //Checks each section for notes, ONLY BT FOR NOW
+                //FX
+                for (int k = 5; k < Math.Min(7, lines[j].Length); k++) //Bad implementation
+                {
+                    switch (lines[j][k])
+                    {
+                        case '1':
+                            //instance.CreateNote(GetLaneButton(k), measureCount, onSectionNum, totalSectionCount);
+                            break;
+                        case '2':
+                            instance.CreateNote(GetLaneButton(k), measureCount, onSectionNum, totalSectionCount);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                //BT
                 for (int k = 0; k < 4; k++)
                 {
                     switch (lines[j][k])
                     {
                         case '1':
                             instance.CreateNote(GetLaneButton(k), measureCount, onSectionNum, totalSectionCount);
+                            break;
+                        case '2':
+                            //instance.CreateNote(GetLaneButton(k), measureCount, onSectionNum, totalSectionCount);
                             break;
                         default:
                             break;
@@ -111,6 +130,10 @@ public class Parser
                 return "BT3";
             case 3:
                 return "BT4";
+            case 5:
+                return "FX1";
+            case 6:
+                return "FX2";
             default:
                 break;
         }
