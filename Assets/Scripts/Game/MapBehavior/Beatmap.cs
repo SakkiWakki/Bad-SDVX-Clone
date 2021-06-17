@@ -48,16 +48,16 @@ public class Beatmap : MonoBehaviour
         switch (note)
         {
             case "BT1":
-                positionNotes(BTNote, 17.6f, 0.02f, z, measureCount, onSectionNum, totalSectionCount, 1);
+                positionNotes(BTNote, 17.6f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 1);
                 break;
             case "BT2":
-                positionNotes(BTNote, 18.94f, 0.02f, z, measureCount, onSectionNum, totalSectionCount, 2);
+                positionNotes(BTNote, 18.94f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 2);
                 break;
             case "BT3":
-                positionNotes(BTNote, 20.3f, 0.02f, z, measureCount, onSectionNum, totalSectionCount, 3);
+                positionNotes(BTNote, 20.3f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 3);
                 break;
             case "BT4":
-                positionNotes(BTNote, 21.65f, 0.02f, z, measureCount, onSectionNum, totalSectionCount, 4);
+                positionNotes(BTNote, 21.65f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 4);
                 break;
             case "FX1":
                 positionNotes(FXNote, 18.27f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 4);
