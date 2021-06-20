@@ -3,7 +3,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Note : MonoBehaviour
 {
     //Where the note appears, in beats
@@ -18,23 +17,17 @@ public class Note : MonoBehaviour
     //The note's row number
     public int row;
 
-    //
-
-
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
+        //Auto
+        //if (Conductor.Instance.songPosition >= songPosition)
+        //{
+        //    Destroy(this.gameObject);
+        //}
 
-        if (Conductor.Instance.songPosition >= songPosition)
-        {
-            Destroy(this.gameObject);
-        }
         switch (row) {
             case 1:
+ 
                 break;
             case 2:
                 break;
