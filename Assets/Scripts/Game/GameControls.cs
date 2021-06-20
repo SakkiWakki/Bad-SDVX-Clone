@@ -19,56 +19,80 @@ public class @GameControls : IInputActionCollection, IDisposable
             ""id"": ""f77889c0-1450-479c-9434-41c3d8d0a470"",
             ""actions"": [
                 {
-                    ""name"": ""BT"",
+                    ""name"": ""BT1"",
                     ""type"": ""Button"",
-                    ""id"": ""c0b2e813-c9a4-4729-af0d-66501f5439de"",
+                    ""id"": ""75107f7c-5c72-40ed-a513-415ebf8e7a3f"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""BT2"",
+                    ""type"": ""Button"",
+                    ""id"": ""8c09530b-5a4a-43b0-a8b7-8992eef1772a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""BT3"",
+                    ""type"": ""Button"",
+                    ""id"": ""23cb61c3-3a06-4040-ba7f-462603ffb934"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""BT4"",
+                    ""type"": ""Button"",
+                    ""id"": ""5fcf68cc-fdaf-454d-ad20-9171a1db4bdb"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""9f9049cf-e50e-4a29-8591-b10f31d62640"",
+                    ""id"": ""979c0023-3dcc-413c-a294-4bc68bda5473"",
                     ""path"": ""<Keyboard>/q"",
-                    ""interactions"": ""Press"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""BT"",
+                    ""action"": ""BT1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""40c80cae-622a-4992-be9b-ed61d46d631b"",
+                    ""id"": ""f2f5486d-2c5e-404d-b999-22d92e7af645"",
                     ""path"": ""<Keyboard>/w"",
-                    ""interactions"": ""Press"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""BT"",
+                    ""action"": ""BT2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""63d47337-d60c-454f-b3e6-9ad329bce3c1"",
+                    ""id"": ""cde30889-618f-43c9-b4ef-adf82cb9eb9b"",
                     ""path"": ""<Keyboard>/numpad8"",
-                    ""interactions"": ""Press"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""BT"",
+                    ""action"": ""BT3"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""14ca5f06-3520-4fc4-b135-7c64139d5205"",
+                    ""id"": ""204edcb7-25c4-4003-9ee6-2c93460494f1"",
                     ""path"": ""<Keyboard>/numpad9"",
-                    ""interactions"": ""Press"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""BT"",
+                    ""action"": ""BT4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -140,7 +164,10 @@ public class @GameControls : IInputActionCollection, IDisposable
 }");
         // Gameplay
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
-        m_Gameplay_BT = m_Gameplay.FindAction("BT", throwIfNotFound: true);
+        m_Gameplay_BT1 = m_Gameplay.FindAction("BT1", throwIfNotFound: true);
+        m_Gameplay_BT2 = m_Gameplay.FindAction("BT2", throwIfNotFound: true);
+        m_Gameplay_BT3 = m_Gameplay.FindAction("BT3", throwIfNotFound: true);
+        m_Gameplay_BT4 = m_Gameplay.FindAction("BT4", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -190,12 +217,18 @@ public class @GameControls : IInputActionCollection, IDisposable
     // Gameplay
     private readonly InputActionMap m_Gameplay;
     private IGameplayActions m_GameplayActionsCallbackInterface;
-    private readonly InputAction m_Gameplay_BT;
+    private readonly InputAction m_Gameplay_BT1;
+    private readonly InputAction m_Gameplay_BT2;
+    private readonly InputAction m_Gameplay_BT3;
+    private readonly InputAction m_Gameplay_BT4;
     public struct GameplayActions
     {
         private @GameControls m_Wrapper;
         public GameplayActions(@GameControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @BT => m_Wrapper.m_Gameplay_BT;
+        public InputAction @BT1 => m_Wrapper.m_Gameplay_BT1;
+        public InputAction @BT2 => m_Wrapper.m_Gameplay_BT2;
+        public InputAction @BT3 => m_Wrapper.m_Gameplay_BT3;
+        public InputAction @BT4 => m_Wrapper.m_Gameplay_BT4;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -205,16 +238,34 @@ public class @GameControls : IInputActionCollection, IDisposable
         {
             if (m_Wrapper.m_GameplayActionsCallbackInterface != null)
             {
-                @BT.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBT;
-                @BT.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBT;
-                @BT.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBT;
+                @BT1.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBT1;
+                @BT1.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBT1;
+                @BT1.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBT1;
+                @BT2.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBT2;
+                @BT2.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBT2;
+                @BT2.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBT2;
+                @BT3.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBT3;
+                @BT3.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBT3;
+                @BT3.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBT3;
+                @BT4.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBT4;
+                @BT4.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBT4;
+                @BT4.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBT4;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @BT.started += instance.OnBT;
-                @BT.performed += instance.OnBT;
-                @BT.canceled += instance.OnBT;
+                @BT1.started += instance.OnBT1;
+                @BT1.performed += instance.OnBT1;
+                @BT1.canceled += instance.OnBT1;
+                @BT2.started += instance.OnBT2;
+                @BT2.performed += instance.OnBT2;
+                @BT2.canceled += instance.OnBT2;
+                @BT3.started += instance.OnBT3;
+                @BT3.performed += instance.OnBT3;
+                @BT3.canceled += instance.OnBT3;
+                @BT4.started += instance.OnBT4;
+                @BT4.performed += instance.OnBT4;
+                @BT4.canceled += instance.OnBT4;
             }
         }
     }
@@ -266,6 +317,9 @@ public class @GameControls : IInputActionCollection, IDisposable
     }
     public interface IGameplayActions
     {
-        void OnBT(InputAction.CallbackContext context);
+        void OnBT1(InputAction.CallbackContext context);
+        void OnBT2(InputAction.CallbackContext context);
+        void OnBT3(InputAction.CallbackContext context);
+        void OnBT4(InputAction.CallbackContext context);
     }
 }

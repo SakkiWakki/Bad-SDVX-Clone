@@ -2457,18 +2457,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9079727140847776282, guid: 87f407aaba0f28a44af7f8643855b524, type: 3}
   m_PrefabInstance: {fileID: 921754303}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1578219270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1578219269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 325646c9cc6484d438a8b042469b063a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1578219271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2481,8 +2469,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: 0}
-  m_NotificationBehavior: 0
+  m_Actions: {fileID: -944628639613478452, guid: 3c6a0d343e3e8e745bccbe5dd4a288cf, type: 3}
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -2493,10 +2481,74 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1578219273}
+        m_TargetAssemblyTypeName: InputController, Assembly-CSharp
+        m_MethodName: BT1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 75107f7c-5c72-40ed-a513-415ebf8e7a3f
+    m_ActionName: Gameplay/BT1[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1578219273}
+        m_TargetAssemblyTypeName: InputController, Assembly-CSharp
+        m_MethodName: BT2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8c09530b-5a4a-43b0-a8b7-8992eef1772a
+    m_ActionName: Gameplay/BT2[/Keyboard/w]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1578219273}
+        m_TargetAssemblyTypeName: InputController, Assembly-CSharp
+        m_MethodName: BT3
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 23cb61c3-3a06-4040-ba7f-462603ffb934
+    m_ActionName: Gameplay/BT3[/Keyboard/numpad8]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1578219273}
+        m_TargetAssemblyTypeName: InputController, Assembly-CSharp
+        m_MethodName: BT4
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5fcf68cc-fdaf-454d-ad20-9171a1db4bdb
+    m_ActionName: Gameplay/BT4[/Keyboard/numpad9]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 
+  m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &1578219273
