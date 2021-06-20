@@ -17,6 +17,9 @@ public class Beatmap : MonoBehaviour
     Parser parser;
 
 
+    //List of list of notes
+    public List<GameObject>[] totalNotes = new List<GameObject>[8]; 
+
     public static Beatmap Instance;
     void Start()
     {
@@ -30,8 +33,14 @@ public class Beatmap : MonoBehaviour
             Destroy(gameObject);
         }
 
+        for (int i = 0; i < 8; i++)
+        {
+            totalNotes[i] = new List<GameObject>();
+        }
+     
+
         //Create chart, also current test code
-        parser = new Parser("Z:/Unity Projects/Bad SDVX Clone/Assets/Resources/666/mxm.ksh");
+        parser = new Parser("./ Assets / Resources / 666 / mxm.ksh");
         parser.KSHMap();
     }
 
@@ -48,29 +57,29 @@ public class Beatmap : MonoBehaviour
         switch (note)
         {
             case "BT1":
-                positionNotes(BTNote, 17.6f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 1);
+                totalNotes[0].Add(positionNotes(BTNote, 17.6f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 1));
                 break;
             case "BT2":
-                positionNotes(BTNote, 18.94f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 2);
+                totalNotes[1].Add(positionNotes(BTNote, 18.94f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 2));
                 break;
             case "BT3":
-                positionNotes(BTNote, 20.3f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 3);
+                totalNotes[2].Add(positionNotes(BTNote, 20.3f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 3));
                 break;
             case "BT4":
-                positionNotes(BTNote, 21.65f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 4);
+                totalNotes[3].Add(positionNotes(BTNote, 21.65f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 4));
                 break;
             case "FX1":
-                positionNotes(FXNote, 18.27f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 4);
+                totalNotes[4].Add(positionNotes(FXNote, 18.27f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 4));
                 break;
             case "FX2":
-                positionNotes(FXNote, 20.98f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 4);
+                totalNotes[5].Add(positionNotes(FXNote, 20.98f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 4));
                 break;
 
         }
     }
 
     //For use in CreateNote()
-    public void positionNotes(GameObject noteType, float x, float y, float z, int measureCount, int onSectionNum, int totalSectionCount, int row)
+    public GameObject positionNotes(GameObject noteType, float x, float y, float z, int measureCount, int onSectionNum, int totalSectionCount, int row)
     {
         GameObject note = Instantiate(noteType, this.gameObject.transform);
         Transform pos = note.GetComponent<Transform>();
@@ -79,5 +88,7 @@ public class Beatmap : MonoBehaviour
         script.beatPosition = timeSignatureTop * (measureCount + (float)onSectionNum/totalSectionCount) + 1;
         script.songPosition = script.beatPosition * Conductor.Instance.secPerBeat;
         script.row = row;
+
+        return note;
     }
 }
