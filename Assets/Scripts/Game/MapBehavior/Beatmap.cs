@@ -13,8 +13,6 @@ public class Beatmap : MonoBehaviour
     public GameObject BTNote;
     public GameObject FXNote;
 
-    public GameObject BTHold;
-
     //Uses the parser class to help read the KSH file.
     Parser parser;
 
@@ -81,32 +79,6 @@ public class Beatmap : MonoBehaviour
         }
     }
 
-    //Creates long note
-    public void createHoldNote(string note, int measureCount, int onSectionNum, int totalSectionCount) {
-
-        switch (note) {
-            case "BT1":
-                
-                break;
-            case "BT2":
-                
-                break;
-            case "BT3":
-                
-                break;
-            case "BT4":
-                
-                break;
-            case "FX1":
-                
-                break;
-            case "FX2":
-                
-                break;
-        }
-
-    }
-
     //For use in CreateNote()
     public GameObject positionNotes(GameObject noteType, float x, float y, float z, int measureCount, int onSectionNum, int totalSectionCount, int row)
     {
@@ -120,19 +92,4 @@ public class Beatmap : MonoBehaviour
 
         return note;
     }
-
-
-    public void positionHoldNotes(GameObject noteType, float x, float y, float z, int measureCount, int onSectionNum, int totalSectionCount, int row) {
-
-        GameObject note = Instantiate(noteType, this.gameObject.transform);
-        Transform pos = note.GetComponent<Transform>();
-        pos.position = new Vector3(x, y, z);
-        Hold script = note.GetComponent<Note>();
-        script.beatPosition = timeSignatureTop * (measureCount + (float)onSectionNum/totalSectionCount) + 1;
-        script.songPosition = script.beatPosition * Conductor.Instance.secPerBeat;
-        script.row = row;
-
-    }
 }
-}
-
