@@ -55,7 +55,7 @@ public class Parser
             }
         }
 
-        List<List<int>> holdNotes = new List<List<int>>(new List<int>(), new List<int>(), new List<int>(), new List<int>(), new List<int>(), new List<int>());
+        List<List<int>> holdNotes = new List<List<int>>();
 
         //Main part of parser
         for (int i = 0; i < locationOfMeasures.Count - 1; i = i+1)
@@ -82,7 +82,7 @@ public class Parser
             //Nested for loop to go through each measure. Keep in mind that int finish still takes place on the "--"s.
             for (int j = start; j < finish; j++)
             {
-                List<boolean> holdCheck = new List<boolean>(false, false, false, false, false, false); //check if hold notes ended
+                List<bool> holdCheck = new List<bool>(); //check if hold notes ended
 
                 onSectionNum++;
                 //FX
@@ -91,7 +91,7 @@ public class Parser
                     switch (lines[j][k])
                     {
                         case '1':
-                            //instance.CreateNote(GetLaneButton(k), measureCount, onSectionNum, totalSectionCount);
+                            instance.createHoldNote(GetLaneButton(k), measureCount, onSectionNum, totalSectionCount);
                             break;
                         case '2':
                             instance.CreateNote(GetLaneButton(k), measureCount, onSectionNum, totalSectionCount);
@@ -109,10 +109,7 @@ public class Parser
                             instance.CreateNote(GetLaneButton(k), measureCount, onSectionNum, totalSectionCount);
                             break;
                         case '2':
-                            if (!holdNotes[k].Contains(j)) {
-                                
-                                instance.createHoldNote(GetLaneButton(k), measureCount, onSectionNum, totalSectionCount);
-                            }
+                            instance.createHoldNote(GetLaneButton(k), measureCount, onSectionNum, totalSectionCount);
                             break;
                         default:
                             break;
@@ -129,7 +126,6 @@ public class Parser
         List<int> lineNum = new List<int>();
 
         while (lines[currentLine][index] == 2) {
-            lineNum 
             currentLine = currentLine + 1;
         }
 

@@ -46,4 +46,8 @@ public class Note : MonoBehaviour
     {
         
     }
+
+    public virtual string getType() {
+        return "Note";
+    }
 }

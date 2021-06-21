@@ -6,7 +6,7 @@ SpriteAtlas:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: buttonHoldAtlas
+  m_Name: fxbuttonhold
   m_EditorData:
     serializedVersion: 2
     textureSettings:
@@ -32,19 +32,19 @@ SpriteAtlas:
     secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
-    - {fileID: 2800000, guid: 44676d681c0ae6540a8f47abf4e2fe29, type: 3}
+    - {fileID: 2800000, guid: 5f70190f9b42c4b4a9c322cf380c296c, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: 1288544877994756742, guid: 44676d681c0ae6540a8f47abf4e2fe29, type: 3}
-  - {fileID: -1994457599130102861, guid: 44676d681c0ae6540a8f47abf4e2fe29, type: 3}
-  - {fileID: 5493210538580872585, guid: 44676d681c0ae6540a8f47abf4e2fe29, type: 3}
+  - {fileID: -4053490822220786974, guid: 5f70190f9b42c4b4a9c322cf380c296c, type: 3}
+  - {fileID: 7770307225162523811, guid: 5f70190f9b42c4b4a9c322cf380c296c, type: 3}
+  - {fileID: 3123624308647976699, guid: 5f70190f9b42c4b4a9c322cf380c296c, type: 3}
   m_PackedSpriteNamesToIndex:
   - dim
   - normal
   - bright
   m_RenderDataMap: {}
-  m_Tag: buttonHoldAtlas
+  m_Tag: fxbuttonhold
   m_IsVariant: 0

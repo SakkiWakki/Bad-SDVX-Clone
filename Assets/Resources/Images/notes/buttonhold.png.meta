@@ -4,13 +4,13 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 1288544877994756742
-    second: buttonhold_dim
+    second: dim
   - first:
       213: -1994457599130102861
-    second: buttonhold_normal
+    second: normal
   - first:
       213: 5493210538580872585
-    second: buttonhold_bright
+    second: bright
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: buttonhold_dim
+      name: dim
       rect:
         serializedVersion: 2
         x: 0
@@ -121,11 +121,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttonhold_normal
+      name: normal
       rect:
         serializedVersion: 2
         x: 0
-        y: 72
+        y: 36
         width: 108
         height: 36
       alignment: 0
@@ -142,7 +142,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: buttonhold_bright
+      name: bright
       rect:
         serializedVersion: 2
         x: 0

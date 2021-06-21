@@ -1489,6 +1489,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8582706521542716992, guid: 87f407aaba0f28a44af7f8643855b524, type: 3}
+      propertyPath: BTHold
+      value: 
+      objectReference: {fileID: 6444462290304630383, guid: 380fd80103f1885419edfc54cc85369b, type: 3}
+    - target: {fileID: 8582706521542716992, guid: 87f407aaba0f28a44af7f8643855b524, type: 3}
       propertyPath: FXNote
       value: 
       objectReference: {fileID: 1968684235440882538, guid: 56dcb8fb57764864dbaad6e5b82e17aa, type: 3}
