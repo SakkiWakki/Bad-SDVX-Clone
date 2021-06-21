@@ -54,6 +54,9 @@ public class Parser
                 locationOfMeasures.Add(lineNumber);
             }
         }
+
+        List<List<int>> holdNotes = new List<List<int>>();
+
         Debug.Log(locationOfMeasures.Count);
         //Main part of parser
         for (int i = 0; i < locationOfMeasures.Count - 1; i++)
@@ -75,16 +78,16 @@ public class Parser
             //Nested for loop to go through each measure. Keep in mind that int finish still takes place on the "--"s.
             for (int j = start; j < finish; j++)
             {
+                List<bool> holdCheck = new List<bool>(); //check if hold notes ended
                 if (lines[j].IndexOf("|") == 4)
                 {
                     onSectionNum++;
                     //FX
                     for (int k = 5; k < Math.Min(7, lines[j].Length); k++) //Bad implementation
-                    {
                         switch (lines[j][k])
                         {
                             case '1':
-                                //instance.CreateNote(GetLaneButton(k), measureCount, onSectionNum, totalSectionCount);
+                                instance.createHoldNote(GetLaneButton(k), measureCount, onSectionNum, totalSectionCount);
                                 break;
                             case '2':
                                 instance.CreateNote(GetLaneButton(k), measureCount, onSectionNum, totalSectionCount);
@@ -92,7 +95,6 @@ public class Parser
                             default:
                                 break;
                         }
-                    }
                     //BT
                     for (int k = 0; k < 4; k++)
                     {
@@ -102,17 +104,27 @@ public class Parser
                                 instance.CreateNote(GetLaneButton(k), measureCount, onSectionNum, totalSectionCount);
                                 break;
                             case '2':
-                                //instance.CreateNote(GetLaneButton(k), measureCount, onSectionNum, totalSectionCount);
+                                instance.createHoldNote(GetLaneButton(k), measureCount, onSectionNum, totalSectionCount);
                                 break;
                             default:
                                 break;
                         }
                     }
-                }      
+                }
             }
             measureCount++;
         }
         Debug.Log(measureCount);
+    }
+
+    public void holdNoteHelper(int currentLine, int index) {
+
+        List<int> lineNum = new List<int>();
+
+        while (lines[currentLine][index] == 2) {
+            currentLine = currentLine + 1;
+        }
+
     }
 
     //For use in KSHMap()
