@@ -111,6 +111,8 @@ public class Parser
                             break;
                     }
                 }
+
+                
             }
 
             measureCount++;

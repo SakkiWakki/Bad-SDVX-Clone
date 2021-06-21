@@ -36,6 +36,22 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
+                },
+                {
+                    "name": "FX1",
+                    "type": "Button",
+                    "id": "3c95b920-488c-440a-9866-97542177ef9f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "FX2",
+                    "type": "Button",
+                    "id": "5b5ca040-11bd-417f-9762-a046c3d08c39",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
                 }
             ],
             "bindings": [
@@ -80,6 +96,28 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "BT4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f6fe45f6-0a6b-42e4-95f3-fd08ce838a08",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "FX1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "96e7343e-01d9-4f1a-bc29-e9f513a4d8da",
+                    "path": "<Keyboard>/numpad0",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "FX2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

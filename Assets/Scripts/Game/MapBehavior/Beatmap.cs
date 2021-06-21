@@ -18,7 +18,7 @@ public class Beatmap : MonoBehaviour
 
 
     //List of list of notes
-    public List<GameObject>[] totalNotes = new List<GameObject>[8]; 
+    public List<GameObject>[] totalNotes = new List<GameObject>[8];
 
     public static Beatmap Instance;
     void Start()
@@ -37,7 +37,7 @@ public class Beatmap : MonoBehaviour
         {
             totalNotes[i] = new List<GameObject>();
         }
-     
+
 
         //Create chart, also current test code
         parser = new Parser("./Assets/Resources/666/mxm.ksh");
@@ -47,11 +47,11 @@ public class Beatmap : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
     //Creates notes on map
-    public void CreateNote(string note, int measureCount, int onSectionNum, int totalSectionCount) 
+    public void CreateNote(string note, int measureCount, int onSectionNum, int totalSectionCount)
     {
         float z = (measureSize * (measureCount + (float)onSectionNum / totalSectionCount));
         switch (note)
@@ -69,10 +69,10 @@ public class Beatmap : MonoBehaviour
                 totalNotes[3].Add(positionNotes(BTNote, 21.65f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 4));
                 break;
             case "FX1":
-                totalNotes[4].Add(positionNotes(FXNote, 18.27f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 4));
+                totalNotes[4].Add(positionNotes(FXNote, 18.27f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 5));
                 break;
             case "FX2":
-                totalNotes[5].Add(positionNotes(FXNote, 20.98f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 4));
+                totalNotes[5].Add(positionNotes(FXNote, 20.98f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 6));
                 break;
 
         }
@@ -85,7 +85,7 @@ public class Beatmap : MonoBehaviour
         Transform pos = note.GetComponent<Transform>();
         pos.position = new Vector3(x, y, z);
         Note script = note.GetComponent<Note>();
-        script.beatPosition = timeSignatureTop * (measureCount + (float)onSectionNum/totalSectionCount) + 1;
+        script.beatPosition = timeSignatureTop * (measureCount + (float)onSectionNum / totalSectionCount) + 1;
         script.songPosition = script.beatPosition * Conductor.Instance.secPerBeat;
         script.row = row;
 
