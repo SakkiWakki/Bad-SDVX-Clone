@@ -54,13 +54,10 @@ public class Parser
                 locationOfMeasures.Add(lineNumber);
             }
         }
-<<<<<<< HEAD
 
         List<List<int>> holdNotes = new List<List<int>>();
 
-=======
         Debug.Log(locationOfMeasures.Count);
->>>>>>> Dev
         //Main part of parser
         for (int i = 0; i < locationOfMeasures.Count - 1; i++)
         {
@@ -82,17 +79,13 @@ public class Parser
             for (int j = start; j < finish; j++)
             {
                 List<bool> holdCheck = new List<bool>(); //check if hold notes ended
-
-                onSectionNum++;
-                //FX
-                for (int k = 5; k < Math.Min(7, lines[j].Length); k++) //Bad implementation
                 if (lines[j].IndexOf("|") == 4)
                 {
                     onSectionNum++;
                     //FX
                     for (int k = 5; k < Math.Min(7, lines[j].Length); k++) //Bad implementation
-                    {
-                        switch (lines[j][k]) {
+                        switch (lines[j][k])
+                        {
                             case '1':
                                 instance.createHoldNote(GetLaneButton(k), measureCount, onSectionNum, totalSectionCount);
                                 break;
@@ -102,11 +95,11 @@ public class Parser
                             default:
                                 break;
                         }
-                    }
                     //BT
                     for (int k = 0; k < 4; k++)
                     {
-                        switch (lines[j][k]) {
+                        switch (lines[j][k])
+                        {
                             case '1':
                                 instance.CreateNote(GetLaneButton(k), measureCount, onSectionNum, totalSectionCount);
                                 break;
@@ -117,7 +110,7 @@ public class Parser
                                 break;
                         }
                     }
-                }      
+                }
             }
             measureCount++;
         }

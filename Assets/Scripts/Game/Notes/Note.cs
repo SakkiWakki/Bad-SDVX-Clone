@@ -30,6 +30,7 @@ public class Note : MonoBehaviour
             Destroy(this.gameObject);
             Beatmap.Instance.totalNotes[row-1].RemoveAt(0);
             Debug.Log(row + ": Miss");
+            Beatmap.Instance.combo = 0;
         }
     }
 

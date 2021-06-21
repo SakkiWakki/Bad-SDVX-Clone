@@ -14,9 +14,25 @@
                     "interactions": "Press"
                 },
                 {
+                    "name": "LongBT1",
+                    "type": "Value",
+                    "id": "de5c16ec-4195-4c98-9ac2-383546b1b9f7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
                     "name": "BT2",
                     "type": "Button",
                     "id": "8c09530b-5a4a-43b0-a8b7-8992eef1772a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "LongBT2",
+                    "type": "Value",
+                    "id": "68e9ec07-39d3-42dc-b8e4-f7512bc1c65b",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
@@ -30,9 +46,25 @@
                     "interactions": "Press"
                 },
                 {
+                    "name": "LongBT3",
+                    "type": "Value",
+                    "id": "08aa8921-d83b-451c-8ab4-892fa2df8121",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
                     "name": "BT4",
                     "type": "Button",
                     "id": "5fcf68cc-fdaf-454d-ad20-9171a1db4bdb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "LongBT4",
+                    "type": "Value",
+                    "id": "f5e4247d-96d5-49b4-9438-6758ab666ce4",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
@@ -46,9 +78,25 @@
                     "interactions": "Press"
                 },
                 {
+                    "name": "LongFX1",
+                    "type": "Value",
+                    "id": "868fc5bf-3dc9-40ed-a4e0-2023a6c24111",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
                     "name": "FX2",
                     "type": "Button",
                     "id": "5b5ca040-11bd-417f-9762-a046c3d08c39",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "LongFX2",
+                    "type": "Value",
+                    "id": "87a704a2-2670-4b43-a738-3f953dc0b3ef",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
@@ -184,6 +232,165 @@
                     "processors": "",
                     "groups": "",
                     "action": "FX2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dd55376a-ea78-4e8e-a3e2-9316c3cfa2b0",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "LongBT1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a2150e15-88ca-453f-8249-99dfb5cb4b14",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LongBT1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f5c5f950-0e0b-4cbc-9493-5a478dcf7c7f",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "LongBT2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2a350d51-bb51-4727-8598-79d265a938f3",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LongBT2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bbd94db5-2ac2-4ea7-b7eb-88be7bd05bf9",
+                    "path": "<Keyboard>/numpad8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "LongBT3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0325e038-9dee-47f6-82bb-f2956d2239a5",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LongBT3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "341c0dfe-4c33-47c3-96a7-0242721651bc",
+                    "path": "<Keyboard>/numpad9",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "LongBT4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a4482348-7c31-440d-9237-70404ee405c1",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LongBT4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0d1bb174-92a6-4c87-8f1c-771243b1c043",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "LongFX1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f50a4cc2-1e6f-49d5-b8e3-431f9f96e021",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LongFX1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0ec82584-3fb5-429b-b04d-e3cb2b75fc7b",
+                    "path": "<Keyboard>/numpad0",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "LongFX2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8b225dce-6a48-4e61-84dd-9642840c17a8",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LongFX2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "UI",
+            "id": "f30c7cdb-d166-4eef-a91a-33849c0bee2d",
+            "actions": [
+                {
+                    "name": "Click",
+                    "type": "PassThrough",
+                    "id": "ec77c042-a09d-4da1-b19d-e9d748afe417",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5a673ebc-610f-45f8-914a-2c4dd8a17d96",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

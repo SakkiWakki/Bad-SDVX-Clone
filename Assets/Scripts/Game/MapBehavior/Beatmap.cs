@@ -17,12 +17,16 @@ public class Beatmap : MonoBehaviour
     public GameObject BTHold;
     public GameObject FXHold;
 
+    //GameUI Stuff
+    public int combo;
+    public int score;
+
     //Uses the parser class to help read the KSH file.
     Parser parser;
 
 
     //List of list of notes
-    public List<GameObject>[] totalNotes = new List<GameObject>[8];
+    public List<GameObject>[] totalNotes = new List<GameObject>[14];
 
     public static Beatmap Instance;
     void Start()
@@ -37,14 +41,16 @@ public class Beatmap : MonoBehaviour
             Destroy(gameObject);
         }
 
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < 14; i++)
         {
             totalNotes[i] = new List<GameObject>();
         }
+        combo = 0;
+        score = 0;
 
 
         //Create chart, also current test code
-        parser = new Parser("./Assets/Resources/666/adv.ksh");
+        parser = new Parser("./Assets/Resources/two-torial/exh.ksh");
         parser.KSHMap();
     }
 
@@ -90,22 +96,22 @@ public class Beatmap : MonoBehaviour
 
         switch (note) {
             case "BT1":
-                totalNotes[0].Add(positionHoldNotes(BTHold, 17.6f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 1));
+                totalNotes[8].Add(positionHoldNotes(BTHold, 17.6f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 9));
                 break;
             case "BT2":
-                totalNotes[1].Add(positionHoldNotes(BTHold, 18.94f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 2));
+                totalNotes[9].Add(positionHoldNotes(BTHold, 18.94f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 10));
                 break;
             case "BT3":
-                totalNotes[2].Add(positionHoldNotes(BTHold, 20.3f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 3));
+                totalNotes[10].Add(positionHoldNotes(BTHold, 20.3f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 11));
                 break;
             case "BT4":
-                totalNotes[3].Add(positionHoldNotes(BTHold, 21.65f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 4));
+                totalNotes[11].Add(positionHoldNotes(BTHold, 21.65f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 12));
                 break;
             case "FX1":
-                totalNotes[4].Add(positionHoldNotes(FXHold, 18.27f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 5));
+                totalNotes[12].Add(positionHoldNotes(FXHold, 18.27f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 13));
                 break;
             case "FX2":
-                totalNotes[5].Add(positionHoldNotes(FXHold, 20.98f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 6));
+                totalNotes[13].Add(positionHoldNotes(FXHold, 20.98f, 0.005f, z, measureCount, onSectionNum, totalSectionCount, 14));
                 break;
         }
 
@@ -124,7 +130,6 @@ public class Beatmap : MonoBehaviour
 
         return note;
     }
-<<<<<<< HEAD
 
     public GameObject positionHoldNotes(GameObject noteType, float x, float y, float z, int measureCount, int onSectionNum, int totalSectionCount, int row) {
 
@@ -159,7 +164,11 @@ public class Beatmap : MonoBehaviour
         return note;
 
     }
+
+    public String stupidNote(string note)
+    {
+        if (note.Length < 1) return "";
+        return stupidNote(note.Substring(1));
+    }
 }
-=======
-}
->>>>>>> Dev
+
