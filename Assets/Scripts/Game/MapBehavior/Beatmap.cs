@@ -40,7 +40,7 @@ public class Beatmap : MonoBehaviour
 
 
         //Create chart, also current test code
-        parser = new Parser("./Assets/Resources/666/mxm.ksh");
+        parser = new Parser("./Assets/Resources/666/adv.ksh");
         parser.KSHMap();
     }
 
@@ -54,6 +54,7 @@ public class Beatmap : MonoBehaviour
     public void CreateNote(string note, int measureCount, int onSectionNum, int totalSectionCount)
     {
         float z = (measureSize * (measureCount + (float)onSectionNum / totalSectionCount));
+        if (z == 15300) Debug.Log("measureCount " + measureCount + " onSectionNum " + onSectionNum + " totalSectionCount " + totalSectionCount);
         switch (note)
         {
             case "BT1":

@@ -54,69 +54,65 @@ public class Parser
                 locationOfMeasures.Add(lineNumber);
             }
         }
-
+        Debug.Log(locationOfMeasures.Count);
         //Main part of parser
-        for (int i = 0; i < locationOfMeasures.Count - 1; i = i+1)
+        for (int i = 0; i < locationOfMeasures.Count - 1; i++)
         {
+            totalSectionCount = 0;
             onSectionNum = -1;
 
             //Indicates where, on the file, a measure begins and ends
             start = locationOfMeasures[i];
             finish = locationOfMeasures[i+1];
 
-            //Check to see when the first section starts (going to implement checking for attributes before sections later)
             for (int j = start + 1; j < finish; j++)
             {
                 if (lines[j].IndexOf("|") == 4)
                 {
-                    //Changes start to the position of the first section
-                    start = j;
-                    break;
+                    totalSectionCount++;
                 }
             }
-
-            totalSectionCount = finish - start;
-
             //Nested for loop to go through each measure. Keep in mind that int finish still takes place on the "--"s.
             for (int j = start; j < finish; j++)
             {
-                onSectionNum++;
-                //FX
-                for (int k = 5; k < Math.Min(7, lines[j].Length); k++) //Bad implementation
+                if (lines[j].IndexOf("|") == 4)
                 {
-                    switch (lines[j][k])
+                    onSectionNum++;
+                    //FX
+                    for (int k = 5; k < Math.Min(7, lines[j].Length); k++) //Bad implementation
                     {
-                        case '1':
-                            //instance.CreateNote(GetLaneButton(k), measureCount, onSectionNum, totalSectionCount);
-                            break;
-                        case '2':
-                            instance.CreateNote(GetLaneButton(k), measureCount, onSectionNum, totalSectionCount);
-                            break;
-                        default:
-                            break;
+                        switch (lines[j][k])
+                        {
+                            case '1':
+                                //instance.CreateNote(GetLaneButton(k), measureCount, onSectionNum, totalSectionCount);
+                                break;
+                            case '2':
+                                instance.CreateNote(GetLaneButton(k), measureCount, onSectionNum, totalSectionCount);
+                                break;
+                            default:
+                                break;
+                        }
                     }
-                }
-                //BT
-                for (int k = 0; k < 4; k++)
-                {
-                    switch (lines[j][k])
+                    //BT
+                    for (int k = 0; k < 4; k++)
                     {
-                        case '1':
-                            instance.CreateNote(GetLaneButton(k), measureCount, onSectionNum, totalSectionCount);
-                            break;
-                        case '2':
-                            //instance.CreateNote(GetLaneButton(k), measureCount, onSectionNum, totalSectionCount);
-                            break;
-                        default:
-                            break;
+                        switch (lines[j][k])
+                        {
+                            case '1':
+                                instance.CreateNote(GetLaneButton(k), measureCount, onSectionNum, totalSectionCount);
+                                break;
+                            case '2':
+                                //instance.CreateNote(GetLaneButton(k), measureCount, onSectionNum, totalSectionCount);
+                                break;
+                            default:
+                                break;
+                        }
                     }
-                }
-
-                
+                }      
             }
-
             measureCount++;
         }
+        Debug.Log(measureCount);
     }
 
     //For use in KSHMap()
