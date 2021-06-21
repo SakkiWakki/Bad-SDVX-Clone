@@ -49,6 +49,22 @@ public class @GameControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""FX1"",
+                    ""type"": ""Button"",
+                    ""id"": ""3c95b920-488c-440a-9866-97542177ef9f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
+                },
+                {
+                    ""name"": ""FX2"",
+                    ""type"": ""Button"",
+                    ""id"": ""5b5ca040-11bd-417f-9762-a046c3d08c39"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
                 }
             ],
             ""bindings"": [
@@ -59,6 +75,17 @@ public class @GameControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""BT1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a2a208be-921d-4bd7-ad67-6d968f82f58a"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
                     ""action"": ""BT1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -76,11 +103,33 @@ public class @GameControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""fa1ce1a9-af22-4bf2-b3c6-fefd17335930"",
+                    ""path"": ""<Keyboard>/b"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BT2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""cde30889-618f-43c9-b4ef-adf82cb9eb9b"",
                     ""path"": ""<Keyboard>/numpad8"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""BT3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bf9a2224-ae68-427a-8e7d-99ae9f17366c"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
                     ""action"": ""BT3"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -93,6 +142,61 @@ public class @GameControls : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""BT4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""65375110-865a-4270-b949-49e4461cbb36"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BT4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f6fe45f6-0a6b-42e4-95f3-fd08ce838a08"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""FX1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5b7475f3-2a1d-4597-bd20-e99cf0085973"",
+                    ""path"": ""<Keyboard>/j"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FX1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""96e7343e-01d9-4f1a-bc29-e9f513a4d8da"",
+                    ""path"": ""<Keyboard>/numpad0"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""FX2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""39b5fa4b-0c3d-4d38-aa54-81125834c4e8"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FX2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -168,6 +272,8 @@ public class @GameControls : IInputActionCollection, IDisposable
         m_Gameplay_BT2 = m_Gameplay.FindAction("BT2", throwIfNotFound: true);
         m_Gameplay_BT3 = m_Gameplay.FindAction("BT3", throwIfNotFound: true);
         m_Gameplay_BT4 = m_Gameplay.FindAction("BT4", throwIfNotFound: true);
+        m_Gameplay_FX1 = m_Gameplay.FindAction("FX1", throwIfNotFound: true);
+        m_Gameplay_FX2 = m_Gameplay.FindAction("FX2", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -221,6 +327,8 @@ public class @GameControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Gameplay_BT2;
     private readonly InputAction m_Gameplay_BT3;
     private readonly InputAction m_Gameplay_BT4;
+    private readonly InputAction m_Gameplay_FX1;
+    private readonly InputAction m_Gameplay_FX2;
     public struct GameplayActions
     {
         private @GameControls m_Wrapper;
@@ -229,6 +337,8 @@ public class @GameControls : IInputActionCollection, IDisposable
         public InputAction @BT2 => m_Wrapper.m_Gameplay_BT2;
         public InputAction @BT3 => m_Wrapper.m_Gameplay_BT3;
         public InputAction @BT4 => m_Wrapper.m_Gameplay_BT4;
+        public InputAction @FX1 => m_Wrapper.m_Gameplay_FX1;
+        public InputAction @FX2 => m_Wrapper.m_Gameplay_FX2;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -250,6 +360,12 @@ public class @GameControls : IInputActionCollection, IDisposable
                 @BT4.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBT4;
                 @BT4.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBT4;
                 @BT4.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBT4;
+                @FX1.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFX1;
+                @FX1.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFX1;
+                @FX1.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFX1;
+                @FX2.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFX2;
+                @FX2.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFX2;
+                @FX2.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFX2;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -266,6 +382,12 @@ public class @GameControls : IInputActionCollection, IDisposable
                 @BT4.started += instance.OnBT4;
                 @BT4.performed += instance.OnBT4;
                 @BT4.canceled += instance.OnBT4;
+                @FX1.started += instance.OnFX1;
+                @FX1.performed += instance.OnFX1;
+                @FX1.canceled += instance.OnFX1;
+                @FX2.started += instance.OnFX2;
+                @FX2.performed += instance.OnFX2;
+                @FX2.canceled += instance.OnFX2;
             }
         }
     }
@@ -321,5 +443,7 @@ public class @GameControls : IInputActionCollection, IDisposable
         void OnBT2(InputAction.CallbackContext context);
         void OnBT3(InputAction.CallbackContext context);
         void OnBT4(InputAction.CallbackContext context);
+        void OnFX1(InputAction.CallbackContext context);
+        void OnFX2(InputAction.CallbackContext context);
     }
 }

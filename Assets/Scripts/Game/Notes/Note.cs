@@ -25,25 +25,12 @@ public class Note : MonoBehaviour
         //    Destroy(this.gameObject);
         //}
 
-        switch (row) {
-            case 1:
- 
-                break;
-            case 2:
-                break;
-            case 3:
-
-                break;
-            case 4:
-
-                break;
+        if (Conductor.Instance.songPosition - songPosition - 0.045f > 0.12f)
+        {
+            Destroy(this.gameObject);
+            Beatmap.Instance.totalNotes[row-1].RemoveAt(0);
+            Debug.Log(row + ": Miss");
         }
-            
     }
 
-    //For use in update UPDATE FOR NEW INPUT SYSTEM
-    void HitCondition()
-    {
-        
-    }
 }

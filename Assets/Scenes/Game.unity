@@ -1492,6 +1492,10 @@ PrefabInstance:
       propertyPath: FXNote
       value: 
       objectReference: {fileID: 1968684235440882538, guid: 56dcb8fb57764864dbaad6e5b82e17aa, type: 3}
+    - target: {fileID: 8582706521542716992, guid: 87f407aaba0f28a44af7f8643855b524, type: 3}
+      propertyPath: measureSize
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 9079727140847776282, guid: 87f407aaba0f28a44af7f8643855b524, type: 3}
       propertyPath: m_Name
       value: Beatmap
@@ -2546,6 +2550,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 5fcf68cc-fdaf-454d-ad20-9171a1db4bdb
     m_ActionName: Gameplay/BT4[/Keyboard/numpad9]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1578219273}
+        m_TargetAssemblyTypeName: InputController, Assembly-CSharp
+        m_MethodName: FX1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3c95b920-488c-440a-9866-97542177ef9f
+    m_ActionName: Gameplay/FX1[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1578219273}
+        m_TargetAssemblyTypeName: InputController, Assembly-CSharp
+        m_MethodName: FX2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5b5ca040-11bd-417f-9762-a046c3d08c39
+    m_ActionName: Gameplay/FX2[/Keyboard/rightArrow]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
