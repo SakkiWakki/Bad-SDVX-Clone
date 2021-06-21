@@ -22,7 +22,7 @@ public class Beatmap : MonoBehaviour
 
 
     //List of list of notes
-    public List<GameObject>[] totalNotes = new List<GameObject>[8]; 
+    public List<GameObject>[] totalNotes = new List<GameObject>[8];
 
     public static Beatmap Instance;
     void Start()
@@ -41,23 +41,24 @@ public class Beatmap : MonoBehaviour
         {
             totalNotes[i] = new List<GameObject>();
         }
-     
+
 
         //Create chart, also current test code
-        parser = new Parser("./Assets/Resources/666/mxm.ksh");
+        parser = new Parser("./Assets/Resources/666/adv.ksh");
         parser.KSHMap();
     }
 
 
     void Update()
     {
-        
+
     }
 
     //Creates notes on map
-    public void CreateNote(string note, int measureCount, int onSectionNum, int totalSectionCount) 
+    public void CreateNote(string note, int measureCount, int onSectionNum, int totalSectionCount)
     {
         float z = (measureSize * (measureCount + (float)onSectionNum / totalSectionCount));
+        if (z == 15300) Debug.Log("measureCount " + measureCount + " onSectionNum " + onSectionNum + " totalSectionCount " + totalSectionCount);
         switch (note)
         {
             case "BT1":
@@ -117,12 +118,13 @@ public class Beatmap : MonoBehaviour
         Transform pos = note.GetComponent<Transform>();
         pos.position = new Vector3(x, y, z);
         Note script = note.GetComponent<Note>();
-        script.beatPosition = timeSignatureTop * (measureCount + (float)onSectionNum/totalSectionCount) + 1;
+        script.beatPosition = timeSignatureTop * (measureCount + (float)onSectionNum / totalSectionCount) + 1;
         script.songPosition = script.beatPosition * Conductor.Instance.secPerBeat;
         script.row = row;
 
         return note;
     }
+<<<<<<< HEAD
 
     public GameObject positionHoldNotes(GameObject noteType, float x, float y, float z, int measureCount, int onSectionNum, int totalSectionCount, int row) {
 
@@ -158,3 +160,6 @@ public class Beatmap : MonoBehaviour
 
     }
 }
+=======
+}
+>>>>>>> Dev
